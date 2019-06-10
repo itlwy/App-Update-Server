@@ -1,0 +1,17 @@
+{
+    "minVersion": 100,
+    "minAllowPatchVersion": 100,
+    "newVersion": 101,
+    "tip": "1231231",
+    "size": 1956622,
+    "apkURL": "http:/192.168.2.107:8000/public/app/app-release.apk",
+    "hash": "7976d711e0d97e0a1b192ead8799a3a8",
+    "patchInfo": {
+        "v100": {
+            "patchURL": "http:/192.168.2.107:8000/public/app/v100/100to101.patch",
+            "tip": "1231231(本次更新包大小:1115277byte)",
+            "hash": "7976d711e0d97e0a1b192ead8799a3a8",
+            "size": 1115277
+        }
+    }
+}

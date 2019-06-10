@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./index.css" />
+    <title>apk发布工具</title>
+</head>
+
+<body>
+    <form action="/update" enctype="multipart/form-data" method="post" class="body">
+        <h3>apk版本发布工具</h3>
+        <div class="row">
+            <label>当前版本号:</label>
+            <input id="currentVersion" disabled type="text" name="currentVersion" />
+        </div>
+        <div class="row">
+            <label>强制更新版本号:</label>
+            <input id="forceVersion" type="text" name="forceVersion" />
+        </div>
+        <div class="row">
+            <label>最低差分版本号:</label>
+            <input id="minIncrementalVersion" type="text" name="minIncrementalVersion" />
+        </div>
+        <div class="row">
+            <label>发布版本号:</label>
+            <input id="apkVersion" type="text" name="apkVersion" />
+        </div>
+        <div class="row">
+            <label>更新提示内容:</label>
+            <textarea id="publishTextInfo" rows="3" cols="20" type="text" name="publishTextInfo"></textarea>
+        </div>
+        <div class="row">
+            <label>发布apk:</label>
+            <input id="apkFile" type="file" name="file" accept="application/vnd.android.package-archive" />
+        </div>
+        <input class="button" type="submit" value="发布" />
+        </div>
+        <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js">
+        </script>
+        <script src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "updateserver",
+  "version": "1.0.0",
+  "description": "app bsdiff update server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/itlwy/App-Update-Server.git"
+  },
+  "keywords": [
+    "nodejs",
+    "app",
+    "update"
+  ],
+  "author": "lwy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itlwy/App-Update-Server/issues"
+  },
+  "homepage": "https://github.com/itlwy/App-Update-Server#readme",
+  "dependencies": {
+    "bsdiff-nodejs": "^2.0.7",
+    "express": "^4.17.1",
+    "multer": "^1.3.0"
+  }
+}

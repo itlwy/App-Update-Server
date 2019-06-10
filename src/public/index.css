@@ -1,0 +1,16 @@
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    align-items: center;
+}
+.button{
+    margin-top: 18px;
+}
