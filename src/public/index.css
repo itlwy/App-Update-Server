@@ -14,3 +14,14 @@
 .button{
     margin-top: 18px;
 }
+
+label{
+    width: 120px;
+    margin-right: 8px;
+}
+input{
+    width: 180px;
+}
+textarea{
+    width: 180px;
+}

@@ -1,6 +1,6 @@
 var multer = require('multer');
 var path = require('path');
-var fileUtil = require('./file_utils');
+var fileUtil = require('./utils/file_utils');
 
 
 var Uploader = function (options) {
