@@ -5,7 +5,6 @@ var fs = require('fs');
 var path = require('path');
 var crypto = require('crypto');
 
-// var httpBasePath = 'http://192.168.2.107:8000/app';
 var httpBasePath = 'app';
 
 var diff = (oldAPKPath, newAPKPath, apkPatchPath) => {
