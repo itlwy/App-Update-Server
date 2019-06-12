@@ -5,27 +5,28 @@
 
 src
 
-​	-public
+	-public
+	
+		-app
+	
+			-UpdateManifest.json
+	
+		-index.css
+	
+		-index.html
+	
+		-index.js
+	
+	-utils
+	
+		-file_utils.js
+	
+	-publish_task.js
+	
+	-server.js
+	
+	-uploader.js
 
-​		-app
-
-​			-UpdateManifest.json
-
-​		-index.css
-
-​		-index.html
-
-​		-index.js
-
-​	-utils
-
-​		-file_utils.js
-
-​	-publish_task.js
-
-​	-server.js
-
-​	-uploader.js
 
 ​	
 
@@ -55,15 +56,14 @@ npm run start
 
 可以看到如下图1
 
-​	![1560332411265](/home/lwy/.config/Typora/typora-user-images/1560332411265.png)
+​	![图1](https://github.com/itlwy/App-Update-Server/blob/master/resources/pic1.png)
 
 ​	首次使用发布功能时，版本号均为0，此时只需要设置首次发布的版本号即可，"强制更新"和"最低差分版本"会自动同步"发布版本号"。即，首次发布如下图：
 
-![1560332697455](/home/lwy/.config/Typora/typora-user-images/1560332697455.png)
+![图2](https://github.com/itlwy/App-Update-Server/blob/master/resources/pic2.png)
 
 ### 非首次使用
 
-![1560332783118](/home/lwy/.config/Typora/typora-user-images/1560332783118.png)
+![图3](https://github.com/itlwy/App-Update-Server/blob/master/resources/pic3.png)
 
 ​	可根据需要设置强制更新版本号和最低差分版本号，含义详见 APK自动更新库 :[AppSmartUpdate](https://github.com/itlwy/AppSmartUpdate)
-
