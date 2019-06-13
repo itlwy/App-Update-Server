@@ -5,7 +5,6 @@ var fs = require('fs');
 var path = require('path');
 var crypto = require('crypto');
 
-var httpBasePath = 'app';
 
 var diff = (oldAPKPath, newAPKPath, apkPatchPath) => {
     return bsdiff.diff(oldAPKPath, newAPKPath, apkPatchPath, (result) => {
@@ -34,6 +33,7 @@ var PublishTask = function (options) {
     this.options = options;
     this.manifest_file = options.manifest_file;
     this.rootPath = options.rootPath;
+    this.baseURLPath = options.baseURLPath;
 };
 
 PublishTask.prototype.start = function (req, res) {
@@ -91,11 +91,11 @@ PublishTask.prototype.diffPublish = function () {
             this.manifest_obj.newVersion = parseInt(this.apkVersion);
             this.manifest_obj.tip = this.publishTextInfo;
             this.manifest_obj.size = newAPKSize
-            this.manifest_obj.apkURL = this.origin+"/"+path.join(httpBasePath, this.originalname);
+            this.manifest_obj.apkURL = this.baseURLPath ? this.baseURLPath + "/" + this.originalname : this.originalname;
             this.manifest_obj.hash = this.newAPKHash
 
             this.manifest_obj.patchInfo['v' + lastVersion] = {
-                patchURL: this.origin+"/"+path.join(httpBasePath, 'v' + lastVersion + '/' + apkPatchName),
+                patchURL: this.baseURLPath ? this.baseURLPath + "/" + path.join('v' + lastVersion + '/' + apkPatchName) : path.join('v' + lastVersion + '/' + apkPatchName),
                 tip: this.publishTextInfo + "(本次更新包大小:" + patchSize + 'byte)',
                 hash: this.newAPKHash,
                 size: patchSize
@@ -118,7 +118,8 @@ PublishTask.prototype.fullPublish = function () {
 
     this.manifest_obj.tip = this.publishTextInfo;
     this.manifest_obj.size = this.newAPKSize;
-    this.manifest_obj.apkURL = this.origin+"/"+path.join(httpBasePath, this.originalname);
+
+    this.manifest_obj.apkURL = this.baseURLPath ? this.baseURLPath + "/" + this.originalname : this.originalname;
     this.manifest_obj.hash = this.newAPKHash;
     fs.writeFileSync(this.manifest_file, JSON.stringify(this.manifest_obj, null, 4));
     this.res.end('publish app succeed');

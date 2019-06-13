@@ -46,6 +46,17 @@ npm install
 npm run start
 ```
 
+注意：如下server.js文件里的代码片段的baseURLPath字段的注释
+
+```
+ var PublishTask = new publish_task_func({
+                manifest_file,
+                rootPath,
+                // 此属性设置时，生成的 UpdateManifest.json里的所有文件url会加上此前缀，否则用相对于UpdateManifest的路径来表示
+                // baseURLPath:'http://192.168.2.107:8000/app'  
+            });
+```
+
 
 
 ## 发布应用
