@@ -70,6 +70,11 @@ PublishTask.prototype.diffPublish = function () {
         fs.mkdirSync(lastDir)
     }
     var oldAPKPath = path.join(this.rootPath, this.originalname);
+    if (!fs.existsSync(oldAPKPath)) {
+        this.handleError(new Error("can't find last version file, please verify the fileName you uploaded is the same as before"));
+        return;
+    }
+
     var apkPatchName = lastVersion + 'to' + this.apkVersion + '.patch';
     var apkPatchPath = path.join(lastDir, apkPatchName);
     diff(oldAPKPath, this.newAPKPath, apkPatchPath)
